@@ -10,7 +10,13 @@ enum FlipDirection {
 }
   
 final AudioCache player = AudioCache();
-player.loadAll(['sfx/card_shuffle0.mp3','sfx/card_shuffle1.mp3','sfx/card_shuffle2.mp3','sfx/card_shuffle3.mp3','sfx/card_shuffle4.mp3']);
+List<String> soundList = new List(5);
+soundList[0] = 'sfx/card_shuffle0.mp3';
+soundList[1] = 'sfx/card_shuffle1.mp3';
+soundList[2] = 'sfx/card_shuffle2.mp3';
+soundList[3] = 'sfx/card_shuffle3.mp3';
+soundList[4] = 'sfx/card_shuffle4.mp3';
+player.loadAll(soundList);
 playSound() {
 	Random randomNum = new Random();
     player.play('sfx/card_shuffle'+randomNum.nextInt(5).toString()+'.mp3');
