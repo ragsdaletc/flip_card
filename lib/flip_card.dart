@@ -47,11 +47,12 @@ class AnimationCard extends StatelessWidget {
   
 typedef void BoolCallback(bool isFront);
 
+final soundList = ['sfx/card_shuffle0.mp3','sfx/card_shuffle1.mp3','sfx/card_shuffle2.mp3','sfx/card_shuffle3.mp3','sfx/card_shuffle4.mp3'];
+final AudioCache myPlayer = AudioCache();
+myPlayer.loadAll(List<String> soundList );
+
 class FlipCard extends StatefulWidget {
 
- final soundList = ['sfx/card_shuffle0.mp3','sfx/card_shuffle1.mp3','sfx/card_shuffle2.mp3','sfx/card_shuffle3.mp3','sfx/card_shuffle4.mp3'];
-  final AudioCache myPlayer = AudioCache();
- myPlayer.loadAll(List<String> soundList );
   final Widget front;
   final Widget back;
 
