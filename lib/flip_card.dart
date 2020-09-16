@@ -9,18 +9,6 @@ enum FlipDirection {
   HORIZONTAL,
 }
   
-final AudioCache player = AudioCache();
-List<String> soundList = new List(5);
-var soundList[0] = 'sfx/card_shuffle0.mp3';
-var soundList[1] = 'sfx/card_shuffle1.mp3';
-var soundList[2] = 'sfx/card_shuffle2.mp3';
-var soundList[3] = 'sfx/card_shuffle3.mp3';
-var soundList[4] = 'sfx/card_shuffle4.mp3';
-player.loadAll(soundList);
-playSound() {
-	Random randomNum = new Random();
-    player.play('sfx/card_shuffle'+randomNum.nextInt(5).toString()+'.mp3');
-  }
 
 class AnimationCard extends StatelessWidget {
   AnimationCard({this.child, this.animation, this.direction});
@@ -52,9 +40,23 @@ class AnimationCard extends StatelessWidget {
   }
 }
 
+  playSound() {
+	Random randomNum = new Random();
+    player.play('sfx/card_shuffle'+randomNum.nextInt(5).toString()+'.mp3');
+  }
+  
 typedef void BoolCallback(bool isFront);
 
 class FlipCard extends StatefulWidget {
+
+  final AudioCache player = AudioCache();
+  List<String> soundList = new List(5);
+  soundList[0] = 'sfx/card_shuffle0.mp3';
+  soundList[1] = 'sfx/card_shuffle1.mp3';
+  soundList[2] = 'sfx/card_shuffle2.mp3';
+  soundList[3] = 'sfx/card_shuffle3.mp3';
+  soundList[4] = 'sfx/card_shuffle4.mp3';
+  player.loadAll(soundList);
   final Widget front;
   final Widget back;
 
