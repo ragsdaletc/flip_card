@@ -11,7 +11,7 @@ enum FlipDirection {
   final AudioCache player = AudioCache();
   playSound() {
 	Random randomNum = new Random();
-    player.play('sfx/card_shuffle'+randomNum.nextInt(5).ToString()+'.mp3');
+    player.play('sfx/card_shuffle'+randomNum.nextInt(5).toString()+'.mp3');
   }
 
 class AnimationCard extends StatelessWidget {
