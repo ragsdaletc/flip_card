@@ -8,11 +8,13 @@ enum FlipDirection {
   VERTICAL,
   HORIZONTAL,
 }
+  
   final AudioCache player = AudioCache();
   playSound() {
 	Random randomNum = new Random();
     player.play('sfx/card_shuffle'+randomNum.nextInt(5).toString()+'.mp3');
   }
+  player.loadAll(['sfx/card_shuffle0.mp3','sfx/card_shuffle1.mp3','sfx/card_shuffle2.mp3','sfx/card_shuffle3.mp3','sfx/card_shuffle4.mp3')];
 
 class AnimationCard extends StatelessWidget {
   AnimationCard({this.child, this.animation, this.direction});
