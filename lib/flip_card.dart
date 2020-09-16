@@ -11,11 +11,11 @@ enum FlipDirection {
   
 final AudioCache player = AudioCache();
 List<String> soundList = new List(5);
-soundList[0] = 'sfx/card_shuffle0.mp3';
-soundList[1] = 'sfx/card_shuffle1.mp3';
-soundList[2] = 'sfx/card_shuffle2.mp3';
-soundList[3] = 'sfx/card_shuffle3.mp3';
-soundList[4] = 'sfx/card_shuffle4.mp3';
+var soundList[0] = 'sfx/card_shuffle0.mp3';
+var soundList[1] = 'sfx/card_shuffle1.mp3';
+var soundList[2] = 'sfx/card_shuffle2.mp3';
+var soundList[3] = 'sfx/card_shuffle3.mp3';
+var soundList[4] = 'sfx/card_shuffle4.mp3';
 player.loadAll(soundList);
 playSound() {
 	Random randomNum = new Random();
