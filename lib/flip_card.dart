@@ -2,11 +2,17 @@ library flip_card;
 
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 enum FlipDirection {
   VERTICAL,
   HORIZONTAL,
 }
+  final AudioCache player = AudioCache();
+  playSound() {
+	Random randomNum = new Random();
+    player.play('sfx/card_shuffle'+randomNum.nextInt(5).ToString()+'.mp3');
+  }
 
 class AnimationCard extends StatelessWidget {
   AnimationCard({this.child, this.animation, this.direction});
@@ -140,9 +146,11 @@ class FlipCardState extends State<FlipCard>
   }
 
   void toggleCard() {
+	playSound();
     if (widget.onFlip != null) {
       widget.onFlip();
     }
+	
     if (isFront) {
       controller.forward();
     } else {
