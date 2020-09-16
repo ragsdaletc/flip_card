@@ -50,8 +50,7 @@ typedef void BoolCallback(bool isFront);
 class FlipCard extends StatefulWidget {
 
   final AudioCache myPlayer = AudioCache();
-  final soundList = ['sfx/card_shuffle0.mp3','sfx/card_shuffle1.mp3','sfx/card_shuffle2.mp3','sfx/card_shuffle3.mp3','sfx/card_shuffle4.mp3'];
- myPlayer.loadAll(soundList);
+ myPlayer.load('sfx/card_shuffle0.mp3');
   final Widget front;
   final Widget back;
 
